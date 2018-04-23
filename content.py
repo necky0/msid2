@@ -43,11 +43,8 @@ def sort_train_labels_knn(Dist, y):
     Dist. Uzyc algorytmu mergesort.
     """
 
-    def sorted_labels(dist):
-        sorted_dist = np.argsort(dist, kind='margesort')
-        return y[sorted_dist]
-
-    return np.apply_along_axis(sorted_labels, axis=1, arr=Dist)
+    sorted_dist = np.argsort(Dist, axis=1, kind='margesort')
+    return y[sorted_dist]
 
 
 def p_y_x_knn(y, k):
